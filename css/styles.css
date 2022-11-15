@@ -1,0 +1,174 @@
+body {
+  background-color: #ccc;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #999;
+}
+
+
+h1 {
+  font-size: 300px;
+  position: absolute;
+  bottom: -64px;
+  color: #8e00d8;
+}
+
+.introduce {
+  width: 100%;
+  height: 400px;
+  background-color: #eee;
+  text-align: center;
+}
+
+.intro_title {
+  font-size: 32px;
+  padding: 40px 0;
+}
+
+.intro_text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #393939;
+  line-height: 26px;
+}
+
+.members {
+  width: 100%;
+  height: 400px;
+  background-color: #666;
+  text-align: center;
+  color: #fff;
+}
+
+.member_title {
+  font-size: 32px;
+  padding: 40px 0;
+}
+
+.mem_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  margin: auto;
+  width: 80%;
+}
+
+.member {
+  width: 20%;
+}
+
+.mem_img {
+  margin: 0 auto 16px;
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+  background-color: #bababa;
+  /* background: url(https://png.pngtree.com/png-vector/20190716/ourlarge/pngtree-edit-profile-icon-trendy-style-isolated-background-png-image_1543058.jpg) center; */
+  /* background-size: cover; */
+}
+
+.mem_name { 
+  font-size: 20px;
+}
+
+
+.join {
+  height: 100%;
+  margin-bottom: 160px;
+  /* background-color: #ccc; */
+}
+
+.join_btn {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: #8e00d8;
+  border-radius: 75px;
+  margin: 40px auto 20px;
+  color: #fff;
+}
+
+.join_wrap {
+  /* display: none; */
+  width: 400px;
+  height: 100%;
+  margin: auto;
+  padding: 10px 0 20px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+}
+
+.join_wrap > input,
+.join_wrap > textarea {
+  width: 380px;
+  height: 50px;
+  margin: 5px 10px;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666666;
+}
+
+.join_wrap > input.join_submit {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: #8e00d8;
+  border-radius: 75px;
+  color: #fff;
+  font-size: 16px;
+  margin: 30px auto;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.join_wrap > textarea::placeholder,
+.join_wrap > input::placeholder {
+  color: #ccc;
+  
+}
+
+.join_wrap > textarea:focus,
+.join_wrap > input:focus {
+  outline: none;
+  border-color: #8e00d8;  
+}
+
+.request {
+  width: 380px;
+  margin: 20px auto 0;
+}
+
+.req_member {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #666;
+  padding: 10px 0 0 20px;
+  box-shadow: 5px 5px #111;
+}
+
+.wait_box {
+  position: absolute;
+  right: 16px;
+  top: 7px;
+  width: 100px;
+  height: 40px;
+  background-color: #111;
+  color: #fff;
+  border-radius: 14px;
+  text-align: center;
+  padding-top: 9px;
+  font-size: 16px;
+}
