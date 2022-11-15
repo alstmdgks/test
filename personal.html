@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>N5a pj</title>
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .head {
+            width: 100%;
+            height: 200px;
+
+            background-color: rebeccapurple;
+            background-position: center;
+            background-size: cover;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .head > h1 {
+            font-size: 50px;
+        }
+        .MBTI {
+            width: 95%;
+            padding: 20px;
+            margin-right:40px;
+            margin-left:40px;
+        }
+        .MBTI > h1 {
+            font-size: 90px;
+        }
+        .MBTI > h2 {
+            font-size: 100px;
+        }
+
+        .ppp {
+            margin-right:40px;
+            margin-left:40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pp {
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+
+        .members {
+          width: 100%;
+          height: 400px;
+          background-color: #666;
+          text-align: center;
+          color: #fff;
+        }
+
+        .member_title {
+          font-size: 32px;
+          padding: 40px 0;
+        }
+
+        .mem_wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+          width: 80%;
+        }
+
+        .member {
+          width: 20%;
+        }
+
+        .mem_img {
+          margin: 0 auto 16px;
+          width: 160px;
+          height: 160px;
+          border-radius: 100px;
+          background-color: #bababa;
+          /* background: url(https://png.pngtree.com/png-vector/20190716/ourlarge/pngtree-edit-profile-icon-trendy-style-isolated-background-png-image_1543058.jpg) center; */
+          /* background-size: cover; */
+        }
+
+        .mem_name {
+          font-size: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            show_members();
+        });
+
+        function show_members() {
+            $.ajax({
+                type: "GET",
+                url: "/members",
+                data: {},
+                success: function (response) {
+                    let rows = response['members']
+                    for (let i=0; i<rows.length; i++){
+                        let MBTI = rows[i]['MBTI']
+                        let name = rows[i]['name']
+                        let si = rows[i]['si']
+                        let advantage = rows[i]['advantage']
+                        let blog = rows[i]['blog']
+                        let email = rows[i]['email']
+
+                        let temp_html = `<div class="MBTI" style="color:mediumpurple ">
+                                            <h1>${MBTI}</h1>
+                                            <h2>${name}</h2>
+                                        </div>
+                                        <div class="ppp">
+                                            <div class="pp">
+                                                <h1>자기소개</h1>
+                                                <p>${si}</p>
+                                            </div>
+                                            <div class="pp">
+                                                <h1>객관적으로 살펴본 자신의 장점</h1>
+                                                <p>${advantage}</p>
+                                            </div>
+                                            <div class="pp">
+                                                <h3>${blog}</h3>
+                                                <h3>${email}</h3>
+                                            </div>
+                                        </div>`
+                        $('#member').append(temp_html)
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="head">
+        <h1>N5a[3] = ["Minuk Park"]</h1>
+    </div>
+    <div class="member">
+        <div class="MBTI" style="color:mediumpurple ">
+            <h1>INTP</h1>
+            <h2>Minuk</h2>
+        </div>
+        <div class="ppp">
+            <div class="pp">
+                <h1>자기소개</h1>
+                <p>생명을 밝은 보내는 있으랴? 아름답고 소금이라 천지는 있는 꽃 커다란 가치를 봄바람이다. 우는 끓는 청춘의 소리다.이것은 열매를 그들은 아름답고 봄바람이다.
+                    불어 발휘하기 날카로우나 위하여 같이 꽃이 싸인 아니한 청춘은 운다. 이상의 것은 시들어 석가는 하는 이상을 때까지 우리의 피다.
+                    청춘의 평화스러운 곳으로 뜨고, 사랑의 같이, 맺어, 그들을 것은 뿐이다. 뼈 것은 몸이 아름다우냐?</p>
+            </div>
+            <div class="pp">
+                <h1>객관적으로 살펴본 자신의 장점</h1>
+                <p>생명을 밝은 보내는 있으랴? 아름답고 소금이라 천지는 있는 꽃 커다란 가치를 봄바람이다.
+                    우는 끓는 청춘의 소리다.이것은 열매를 그들은 아름답고 봄바람이다. 불어 발휘하기 날카로우나 위하여 같이 꽃이 싸인 아니한 청춘은 운다.
+                    이상의 것은 시들어 석가는 하는 이상을 때까지 우리의 피다.
+                    청춘의 평화스러운 곳으로 뜨고, 사랑의 같이, 맺어, 그들을 것은 뿐이다. 뼈 것은 몸이 아름다우냐?</p>
+            </div>
+            <div class="pp">
+                <h3>http://velog.io/@jxxxhxxx</h3>
+                <h3>ansems@naver.com</h3>
+            </div>
+        </div>
+    </div>
+    <section class="members">
+      <h2 class="member_title">N5a members</h2>
+      <ul class="mem_wrap">
+        <li class="member">
+          <a href="">
+            <div class="mem_img"></div>
+          </a>
+          <p class="mem_name">Jeonghoon</p>
+          <p class="mem_intro">N5a 조장</p>
+        </li>
+
+        <li class="member">
+          <a href="">
+            <div class="mem_img"></div>
+          </a>
+          <p class="mem_name">Seungmin</p>
+          <p class="mem_intro">N5a 조장</p>
+        </li>
+
+        <li class="member">
+          <a href="">
+            <div class="mem_img"></div>
+          </a>
+          <p class="mem_name">Minwook</p>
+          <p class="mem_intro">N5a 조장</p>
+        </li>
+
+        <li class="member">
+          <a href="">
+            <div class="mem_img"></div>
+          </a>
+          <p class="mem_name">Yejin</p>
+          <p class="mem_intro">N5a 조장</p>
+        </li>
+
+        <li class="member">
+          <a href="">
+            <div class="mem_img"></div>
+          </a>
+          <p class="mem_name">Jinwoo</p>
+          <p class="mem_intro">N5a 조장</p>
+        </li>
+      </ul>
+    </section>
+</body>
+</html>
